@@ -15,7 +15,7 @@
 			"category": "Utility",
 			"location": "https://raw.githubusercontent.com/KurtSanders/STBitBarApp-V2/master/hubitat/packageManifest.json",
 			"description": "Monitor and control Hubitat devices, sensors, Hubitat Safety Monitor, Modes & Routines from the Apple MacOS Menu Bar.",
-			"tags": [ "Integrations","Monitoring" ]
+			"tags": [ "Integrations","Monitoring","Dashboards","Tools & Utilities" ]
 		}
 	]
 }
