@@ -13,7 +13,7 @@
 		{
 			"name": "BitBar Output App for the Apple MacOS™ Menubar",
 			"category": [ "Utility","Control","Convenience" ],
-			"location": "https://raw.githubusercontent.com/KurtSanders/STBitBarApp-V2/master/hubitat/packageManifest.json",
+			"location": "https://raw.githubusercontent.com/KurtSanders/STBitBarApp-V2/master/packageManifest.json",
 			"description": "Monitor and control Hubitat™ devices, sensors, Hubitat™ Safety Monitor, Modes & Routines from the Apple© MacOS Menu Bar.",
 			"tags": [ "Integrations","Monitoring","Dashboards","Tools & Utilities" ]
 		}
