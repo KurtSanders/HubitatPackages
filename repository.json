@@ -8,14 +8,21 @@
 			"category": "Integrations",
 			"location": "https://raw.githubusercontent.com/KurtSanders/STAmbientWeather/master/hubitat/packageManifest.json",
 			"description": "Integrates your Internet connected Ambient™ Weather Station system into the Hubitat™ environment.",
-			"tags": [ "Weather","Integrations","Monitoring","Temperature & Humidity" ]
+			"tags": [ "Weather","Monitoring","Pools & Spas","Temperature & Humidity" ]
 		},
 		{
-			"name": "Bitbar Output App for the Apple MacOS™ Menubar",
+			"name": "Depreciated - Bitbar Output App NO LONGER SUPPORTED",
 			"category": "Convenience",
 			"location": "https://raw.githubusercontent.com/KurtSanders/STBitBarApp-V2/master/packageManifest.json",
-			"description": "Monitor and control Hubitat™ devices, sensors, Hubitat™ Safety Monitor, Modes & Routines quickly from the Apple macOS Menu Bar.",
-			"tags": [ "Integrations","Monitoring","Dashboards","Tools & Utilities" ]
+			"description": "No longer supported! See Xbar → Hubitat version in HPM.",
+			"tags": [ "Monitoring","Tools & Utilities" ]
+		},
+		{
+			"name": "Hubitat → Xbar for the Apple MacOS™ Menubar ",
+			"category": "Convenience",
+			"location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Xbar/main/packageManifest.json",
+			"description": "Monitor and control Hubitat™ devices, sensors, Hubitat™ Safety Monitor and Modes quickly from the Apple macOS Menu Bar.  Requires freeware Xbar application ",
+			"tags": [ "Monitoring","Tools & Utilities" ]
 		}
 	]
 }
