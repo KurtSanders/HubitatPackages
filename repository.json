@@ -21,7 +21,7 @@
 			"name": "Hubitat → Xbar for the Apple MacOS™ Menubar ",
 			"category": "Convenience",
 			"location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Xbar/main/packageManifest.json",
-			"description": "Monitor and control Hubitat™ devices, sensors, Hubitat™ Safety Monitor and Modes quickly from the Apple macOS Menu Bar.  Requires freeware Xbar application ",
+			"description": "Monitor and control Hubitat™ devices, sensors, Hubitat™ Safety Monitor and Modes quickly from the Apple macOS Menu Bar.  Requires freeware Xbar 2.17-Beta, Python3 v3.11+, Apple macOS v13+ ",
 			"tags": [ "Monitoring","Tools & Utilities" ]
 		}
 	]
