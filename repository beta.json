@@ -1,0 +1,14 @@
+{
+	"author": "Kurt Sanders",
+	"gitHubUrl": "https://github.com/KurtSanders",
+	"payPalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJDQJASTD8JKU&source=url",
+	"packages": [
+		{
+			"name": "BWA Spa Manager",
+			"category": "Integrations",
+			"location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/master/packageManifest.json",
+			"description": "Integrates your Balboa internet connected SPA system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
+			"tags": [ "Monitoring","Spas","Temperature","Balboa","Cloud Control" ]
+		}
+			]
+}
