@@ -1,14 +1,19 @@
 {
-	"author": "Kurt Sanders",
-	"gitHubUrl": "https://github.com/KurtSanders",
-	"payPalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJDQJASTD8JKU&source=url",
-	"packages": [
-		{
-			"name": "BWA Spa Manager",
-			"category": "Integrations",
-			"location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/master/packageManifest.json",
-			"description": "Integrates your internet connected SPA system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
-			"tags": [ "Monitoring","Pools & Spas","Temperature & Humidity", "Climate Conntrol","Integrations","Monitoring","Water" ]
-		}
-			]
+    "author": "Kurt Sanders",
+    "gitHubUrl": "https://github.com/KurtSanders",
+    "payPalUrl": "https://www.paypal.com/donate/?hosted_button_id=E4WXT86RTPXDC",
+    "packages": [
+        {
+            "name": "Ambient Weather Station",
+            "category": "Integrations",
+            "location": "https://raw.githubusercontent.com/KurtSanders/STAmbientWeather/beta/hubitat/packageManifest.json",
+            "description": "Integrates your Internet connected Ambient™ Weather Station system into the Hubitat™ environment.",
+            "tags": [
+                "Weather",
+                "Monitoring",
+                "Pools & Spas",
+                "Temperature & Humidity"
+            ]
+        }
+    ]
 }
