@@ -1,62 +1,14 @@
 {
-  "packageName": "BWA Spa Manager βeta",
-  "author": "Kurt Sanders",
-  "version": "1.3.0",
-  "minimumHEVersion": "2.3.7",
-  "dateReleased": "2024-02-05",
-  "documentationLink": "https://github.com/KurtSanders/HBBWASpaManager/blob/beta/README.md",
-  "communityLink": "https://community.hubitat.com/t/release-hb-bwa-spamanager/128842",
-  "licenseFile": "",
-  "releaseNotes": "v1.3.0 REQUIRES HPM v1.9.2 or higher for install or update\n1. This update release has extensive changes to both the application & drivers to catch/handle spa offline/disconnected conditions as best as possible.  The Balboa SPA WiFi controller can be very unstable and randomly losses network connection to the BWA Cloud.  It is recommended to check the 'online' state in parent spa driver to determine if the spa is 'online' before sending events, like pump on, lights on, etc.\n2. Added new feature 'Set Spa to Local Time' command in spa device parent to update the internal SPA time clock to hubs local time in HH:mm format'.\n3. Added a new 'speed' attribute to the spa switch child driver(s) for selected spa devices, like pumps, etc that have a low or high capabilities in addition to a switch state of 'on/off'.\n4. Updated BWA Spa Manager code stream to use HE libraries and bundles. You must be on HPM v1.9.2 or higher to install or update successfully.",
-  "bundles": [
-    {
-      "id": "3da05b78-d0d5-42a3-b45d-57df2002a191",
-      "name": "BWA Spa Manager Bundle",
-      "namespace": "kurtsanders",
-      "location": "https://github.com/KurtSanders/HBBWASpaManager/raw/beta/bundles/BWASpaManagerBundle.zip",
-      "required": true
-    },
-        {
-      "id": "b438d8c9-c3bb-45b6-9dcd-a5f0fb931617",
-      "name": "SanderSoft Bundle",
-      "namespace": "kurtsanders",
-      "location": "https://github.com/KurtSanders/HubitatPackages/raw/master/resources/bundles/SannderSoftBundle.zip",
-      "required": true
-    }
-
-  ],
-  "apps": [
-    {
-      "id": "bc4ae4ab-f0eb-4505-a677-21ce430b3823",
-      "name": "BWA Spa Manager",
-      "namespace": "kurtsanders",
-      "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/beta/HBBWASpaManager_App.groovy",
-      "required": true,
-      "primary": true,
-      "oauth": false
-    }
-  ],
-  "drivers": [
-    {
-      "id": "d1747691-8d6e-4448-9aae-b0981fc6915a",
-      "name": "HB BPA SPA Parent",
-      "namespace": "kurtsanders",
-      "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/beta/HBBWASpaManager_Parent_Device.groovy",
-      "required": true
-    },
-    {
-      "id": "b9105e48-ae2e-45af-8826-5ceb8e52ae92",
-      "name": "HB BWA SPA Switch",
-      "namespace": "kurtsanders",
-      "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/beta/HBBWASpaManager_Switch_Device.groovy",
-      "required": true
-    },
-    {
-      "id": "4e9c94b5-f0c2-41db-a90d-40aa29e5d749",
-      "name": "HB BWA SPA Thermostat",
-      "namespace": "kurtsanders",
-      "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/beta/HBBWASpaManager_Thermostat_Device.groovy",
-      "required": true
-    }
-  ]
+	"author": "Kurt Sanders",
+	"gitHubUrl": "https://github.com/KurtSanders",
+	"payPalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJDQJASTD8JKU&source=url",
+	"packages": [
+		{
+			"name": "BWA Spa Manager βeta",
+			"category": "Integrations",
+			"location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/beta/packageManifest.json",
+			"description": "Integrates your internet connected SPA system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
+			"tags": [ "Monitoring","Pools & Spas","Temperature & Humidity", "Climate Conntrol","Integrations","Monitoring","Water" ]
+		}
+	]
 }
