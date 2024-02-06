@@ -137,7 +137,7 @@ void setLogLevel(String levelName, String timeName=null) {
     Integer time = LOG_TIMES.find{ timeName.equalsIgnoreCase(it.value) }.key
     if (app) {
         app.updateSetting("logLevel",[value:"${level}", type:"enum"])
-        app.updateSetting("logLevelTime",[value:"${level}", type:"enum"])
+        app.updateSetting("logLevelTime",[value:"${time}", type:"enum"])
     } else {
         device.updateSetting("logLevel",[value:"${level}", type:"enum"])
         device.updateSetting("logLevelTime",[value:"${time}", type:"enum"])
