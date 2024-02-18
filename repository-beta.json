@@ -6,8 +6,8 @@
 		{
 			"name": "BWA Spa Manager βeta",
 			"category": "Integrations",
-			"location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/beta/packageManifest.json",
-			"description": "Integrates your internet connected SPA system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
+			"location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/master/beta-release/packageManifest-beta.json",
+			"description": "βeta - Integrates your internet connected SPA system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
 			"tags": [ "Monitoring","Pools & Spas","Temperature & Humidity", "Climate Conntrol","Integrations","Monitoring","Water" ]
 		}
 	]
