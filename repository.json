@@ -7,7 +7,7 @@
       "name": "Ambient Weather Station",
       "category": "Integrations",
       "location": "https://raw.githubusercontent.com/KurtSanders/STAmbientWeather/master/hubitat/packageManifest.json",
-      "description": "Integrates your Internet connected Ambient™ Weather Station system into the Hubitat™ environment.",
+      "description": "Integrates your Internet connected Ambient Weather Station system into the Hubitat environment.",
       "tags": [
         "Weather",
         "Monitoring",
@@ -17,10 +17,10 @@
       "id": "e2e6903b-cfa3-463c-901f-ed9364212df2"
     },
     {
-      "name": "Hubitat → Xbar for the Apple  MacOS™ Menubar ",
+      "name": "Hubitat on Apple Menubar",
       "category": "Integrations",
       "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Xbar/main/packageManifest.json",
-      "description": "Monitor and control Hubitat™ devices, sensors, Hubitat™ Safety Monitor and Modes quickly from the Apple  macOS Menu Bar.  Requires freeware Xbar 2.17-Beta, Python3 v3.11+, Apple  macOS v13+ ",
+      "description": "Monitor and control Hubitat devices, sensors, Hubitat Safety Monitor and Modes quickly from the Apple Menu Bar.  Requires freeware Xbar 2.17-Beta, Python3 v3.11+, Apple macOS v13+",
       "tags": [
         "Monitoring",
         "Tools & Utilities"
@@ -31,7 +31,7 @@
       "name": "BWA Spa Manager",
       "category": "Integrations",
       "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/master/packageManifest.json",
-      "description": "Integrates your internet connected Hot Tub/Spa system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
+      "description": "Integrates your internet connected Hot Tub/Spa system with Balboa Cloud Spa Controller into the Hubitat environment.",
       "tags": [
         "Monitoring",
         "Pools & Spas",
