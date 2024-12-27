@@ -1,20 +1,34 @@
 {
-   "author": "Kurt Sanders",
-   "gitHubUrl": "https://github.com/KurtSanders",
-   "payPalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJDQJASTD8JKU&source=url",
-   "packages": [
-      {
-         "name": "BWA Spa Manager βeta",
-         "category": "Integrations",
-         "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/master/beta-release/packageManifest-beta.json",
-         "description": "βeta - Integrates your internet connected SPA system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
-         "tags": [
-            "Monitoring",
-            "Pools & Spas",
-            "Temperature & Humidity",
-            "Monitoring",
-            "Water"
-         ]
-      }
-   ]
+    "author": "Kurt Sanders",
+    "gitHubUrl": "https://github.com/KurtSanders",
+    "payPalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJDQJASTD8JKU&source=url",
+    "packages": [
+        {
+            "name": "BWA Spa Manager βeta",
+            "category": "Integrations",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/master/beta-release/packageManifest-beta.json",
+            "description": "βeta - Integrates your internet connected SPA system with Balboa Cloud Spa Controller into the Hubitat™ environment.",
+            "tags": [
+                "Monitoring",
+                "Pools & Spas",
+                "Temperature & Humidity",
+                "Monitoring",
+                "Water"
+            ]
+        },
+        {
+            "name": "Hubitat SmartLife Device Integration",
+            "category": "Integrations",
+            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-SmartLife-Integration/refs/heads/main/packageManifest.json",
+            "description": "Provides a local network integraton to a SmartLife (Tuya) controlled Heated Towel Warmer (Dywarmic https://www.dywarmic.com/).",
+            "tags": [
+                "Monitoring",
+                "Bathroom",
+                "Pools & Spas",
+                "Temperature & Humidity",
+                "Water"
+            ],
+            "id": "ea1bd527-214b-4a03-ac9e-8ef3c6e6fb34"
+        }
+    ]
 }
