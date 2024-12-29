@@ -17,16 +17,15 @@
             ]
         },
         {
-            "name": "Hubitat SmartLife Device Integration",
+            "name": "Hubitat Dywarmic Towel Warmer Integration",
             "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-SmartLife-Integration/refs/heads/main/packageManifest.json",
-            "description": "Provides a local network integraton to a SmartLife (Tuya) controlled Heated Towel Warmer (Dywarmic https://www.dywarmic.com/).",
+            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Dywarmic-Integration/refs/heads/main/packageManifest.json",
+            "description": "Provides local network integraton to Dywarmic Towel Warmer.",
             "tags": [
                 "Monitoring",
                 "Bathroom",
                 "Pools & Spas",
-                "Temperature & Humidity",
-                "Water"
+                "Temperature & Humidity"
             ],
             "id": "ea1bd527-214b-4a03-ac9e-8ef3c6e6fb34"
         }
