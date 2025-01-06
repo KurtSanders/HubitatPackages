@@ -41,7 +41,7 @@
             "id": "1c28d98d-56ab-4c54-8346-76cf62844b6e"
         },
         {
-            "name": "Hubitat Dywarmic Towel Warmer Integration",
+            "name": "Dywarmic Towel Warmer Integration",
             "category": "Integrations",
             "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Dywarmic-Integration/refs/heads/main/packageManifest.json",
             "description": "Provides local network integraton to Dywarmic Towel Warmer.",
