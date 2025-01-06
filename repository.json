@@ -44,7 +44,7 @@
             "name": "Dywarmic Towel Warmer Integration",
             "category": "Integrations",
             "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Dywarmic-Integration/refs/heads/main/packageManifest.json",
-            "description": "Provides local network integraton to Dywarmic Towel Warmer.",
+            "description": "Provides local network WiFi integraton to a Dywarmic Towel Warmer.",
             "tags": [
                 "Monitoring",
                 "Bathroom",
