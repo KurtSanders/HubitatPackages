@@ -10,7 +10,7 @@ library (
     name: "SanderSoft-Library",
     namespace: "kurtsanders",
     documentationLink: "https://github.com/KurtSanders/",
-    version: "0.0.1",
+    version: "0.0.4",
     disclaimer: "This core library is only for use with SanderSoft Apps and Drivers."
 )
 
@@ -24,12 +24,31 @@ import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.TimeZone
+import groovyx.net.http.HttpResponseException
 
 @Field static final String GITHUB_IMAGES_LINK      = "https://raw.githubusercontent.com/kurtsanders/HubitatPackages/master/resources/images/"
 
 def uninstalled() {
     unschedule()
     removeChildDevices(getChildDevices())
+}
+
+def returnVar(var) {
+    def dataType = "String"
+    def returnValue
+    if (!(settings."${var}" == null)) { returnValue = settings."${var}" }
+    if (!(state."${var}" == null)) { returnValue = state."${var}" }
+	if (!(atomicState."${var}" == null)) { returnValue = atomicState."${var}" }
+    def dateTest = returnValue =~ /\d\d\d\d-\d\d-\d\dT\d\d:/
+    if (dateTest) { dataType = "Date" }
+    if (returnValue == "true") { dataType = "Boolean" }
+    if (returnValue == "false") { dataType = "Boolean" }
+    if (returnValue == true) { dataType = "Boolean" }
+    if (returnValue == false) { dataType = "Boolean" }
+    if (dataType == "Date") {returnValue = Date.parse("yyyy-MM-dd'T'HH:mm:ss.SSSZ", returnValue)}
+    logDebug ("returnVar(${var}), DataType:${dataType}, Value: ${returnValue}")
+    if (returnValue == null || returnValue == "") {}
+    return returnValue
 }
 
 private removeChildDevices(delete) {
@@ -77,7 +96,7 @@ String fmtDesc(String str) {
 def getImage(type) {
     def loc = "<img src=" + GITHUB_IMAGES_LINK
     if(type == "Blank")          return "${loc}blank.png height=40 width=5}>"
-    if(type == "checkMarkGreen") return "${loc}checkMarkGreen2.png height=30 width=30>"
+    if(type == "checkMarkGreen") return "${loc}checkMarkGreen2.png height=20 width=20>"
     if(type == "optionsGreen")   return "${loc}options-green.png height=30 width=30>"
     if(type == "optionsRed")     return "${loc}options-red.png height=30 width=30>"
     if(type == "instructions")   return "${loc}instructions.png height=30 width=30>"
@@ -90,18 +109,52 @@ def getImage(type) {
 }
 
 def getFormat(type, myText="") {
-    if(type == "header-blue") return "<div style='color:#ffffff;font-weight: bold;background-color:#309bff;border: 1px solid;box-shadow: 2px 3px #A9A9A9'>${myText}</div>"
-    if(type == "header-red")  return "<div style='color:#ffffff;font-weight: bold;background-color:#ff0000;border: 1px solid;box-shadow: 2px 3px #A9A9A9'>${myText}</div>"
     if(type == "line")        return "<hr style='background-color:#1A77C9; height: 1px; border: 0;'>"
     if(type == "title")       return "<h2 style='color:#1A77C9;font-weight: bold'>${myText}</h2>"
-    if(type == "text-green")  return "<div style='color:green'>${myText}</div>"
-    if(type == "text-red")    return "<div style='color:red'>${myText}</div>"
-    if(type == "text-blue")   return "<div style='color:blue'>${myText}</div>"
-    if(type == "button-blue") return "<a style='color:white;text-align:center;font-size:20px;font-weight:bold;background-color:#03FDE5;border:1px solid #000000;box-shadow:3px 4px #8B8F8F;border-radius:10px' href='${page}'>${myText}</a>"
+    if (type.contains('-')) {
+        switch (type.split('-')[0]) {
+            case "button":
+            return "<a style='color:white;text-align:center;font-size:20px;font-weight:bold;background-color:${type.split('-')[1]};border:1px solid #000000;box-shadow:3px 4px #8B8F8F;border-radius:10px' href='${page}'>${myText}</a>"
+            break
+            case "text":
+            return "<span style=color:${type.split('-')[1]}>${myText}</span>"
+            break
+            case "header":
+            return "<div style='color:#ffffff;font-weight: bold;background-color:${type.split('-')[1]};border: 1px solid;box-shadow: 2px 3px #A9A9A9'>${myText}</div>"
+            default:
+                def error = "getFormat() contained a '-' but invalid/missing type"
+                log.error error
+            return error
+            break
+        }
+    }
 }
 
 def sectionHeader(title){
     return getFormat("header-blue", "${getImage("Blank")}"+" ${title}")
+}
+
+public static String formatSeconds(int timeInSeconds)
+{
+    int hours = timeInSeconds / 3600;
+    int secondsLeft = timeInSeconds - hours * 3600;
+    int minutes = secondsLeft / 60;
+    int seconds = secondsLeft - minutes * 60;
+
+    String formattedTime = "";
+    if (hours < 10)
+        formattedTime += "0";
+    formattedTime += hours + ":";
+
+    if (minutes < 10)
+        formattedTime += "0";
+    formattedTime += minutes + ":";
+
+    if (seconds < 10)
+        formattedTime += "0";
+    formattedTime += seconds ;
+
+    return formattedTime;
 }
 
 //Logging Level Options
@@ -111,8 +164,8 @@ def sectionHeader(title){
 
 //Call this function from within updated() and configure() with no parameters: checkLogLevel()
 void checkLogLevel(Map levelInfo = [level:null, time:null]) {
-    unschedule(logsOff)
     //Set Defaults
+    unschedule(logsOff)
     if (app) {
         if (settings.logLevel == null) app.updateSetting("logLevel",[value:LOG_DEFAULT_LEVEL, type:"enum"])
         if (settings.logLevelTime == null) app.updateSetting("logLevelTime",[value:"0", type:"enum"])
@@ -125,10 +178,26 @@ void checkLogLevel(Map levelInfo = [level:null, time:null]) {
     String logMsg = "Logging Level is: ${LOG_LEVELS[levelInfo.level]}"
     if (levelInfo.level >= 1 && levelInfo.time > 0) {
         logMsg += " for ${LOG_TIMES[levelInfo.time]}"
+        logInfo "A 'logsOff' cron job has been scheduled in ${formatSeconds(60*levelInfo.time)}"
         runIn(60*levelInfo.time, logsOff, [overwrite: true])
     }
     if (levelInfo.time == 0) logMsg += " (${LOG_TIMES[levelInfo.time]})"
     logInfo(logMsg)
+}
+
+void syncLogLevel(level, time) {
+    logTrace "syncLogLevel(${level}, ${time})"
+    logTrace "0) UpdateSetting ${device.displayName} logLevel:${level} and logLevelTime:${time}"
+    device.updateSetting("logLevel",[value:"${level}", type:"enum"])
+    device.updateSetting("logLevelTime",[value:"${time}", type:"enum"])
+    checkLogLevel()
+    getChildDevices().eachWithIndex { childDev, index ->
+        logTrace "${index+1}) UpdateSetting ${childDev.displayName} logLevel:${level} and logLevelTime:${time}"
+        childDev.updateSetting("logLevel",[value:"${level}", type:"enum"])
+        childDev.updateSetting("logLevelTime",[value:"${time}", type:"enum"])
+        logTrace "${index+1}) Calling ${childDev.displayName}.checkLogLevel()"
+        childDev.checkLogLevel()
+    }
 }
 
 //Function for optional command
@@ -161,7 +230,25 @@ def logMessage(String msg) {
     if (app) {
         return "<span style='color: blue'>${app.name}</span>: ${msg}"
     } else {
-        return "<span style='color: green'>${device.name}</span>: ${msg}"
+        def color
+        switch (device.typeName) {
+         case ~/.*Parent$/:
+            color = 'red'
+            break
+         case ~/.*Switch$/:
+            color = 'green'
+            break
+         case ~/.*Pump$/:
+            color = 'purple'
+            break
+         case ~/.*Thermostat$/:
+            color = 'Brown'
+            break
+         default:
+            color = 'orange'
+            break
+        }
+        return "<span style=color:${color}>${device.name}</span>: ${msg}"
     }
 }
 
@@ -174,11 +261,9 @@ void logWarn(String msg) {
 void logInfo(String msg) {
     if (logLevelInfo.level>=3) log.info "${logMessage(msg)}"
 }
-
 void logDebug(String msg) {
         if (logLevelInfo.level>=4) log.debug "${logMessage(msg)}"
 }
-
 void logTrace(String msg) {
         if (logLevelInfo.level>=5) log.trace "${logMessage(msg)}"
 }
