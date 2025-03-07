@@ -10,7 +10,7 @@ library (
     name: "SanderSoft-Library",
     namespace: "kurtsanders",
     documentationLink: "https://github.com/KurtSanders/",
-    version: "0.0.4",
+    version: "0.0.5",
     disclaimer: "This core library is only for use with SanderSoft Apps and Drivers."
 )
 
@@ -223,47 +223,4 @@ Map getLogLevelInfo() {
 void logsOff() {
     logInfo "Logging auto disabled"
     setLogLevel("Off","Indefinitely")
-}
-
-//Logging Functions
-def logMessage(String msg) {
-    if (app) {
-        return "<span style='color: blue'>${app.name}</span>: ${msg}"
-    } else {
-        def color
-        switch (device.typeName) {
-         case ~/.*Parent$/:
-            color = 'red'
-            break
-         case ~/.*Switch$/:
-            color = 'green'
-            break
-         case ~/.*Pump$/:
-            color = 'purple'
-            break
-         case ~/.*Thermostat$/:
-            color = 'Brown'
-            break
-         default:
-            color = 'orange'
-            break
-        }
-        return "<span style=color:${color}>${device.name}</span>: ${msg}"
-    }
-}
-
-void logErr(String msg) {
-    if (logLevelInfo.level>=1) log.error "${logMessage(msg)}"
-}
-void logWarn(String msg) {
-    if (logLevelInfo.level>=2) log.warn "${logMessage(msg)}"
-}
-void logInfo(String msg) {
-    if (logLevelInfo.level>=3) log.info "${logMessage(msg)}"
-}
-void logDebug(String msg) {
-        if (logLevelInfo.level>=4) log.debug "${logMessage(msg)}"
-}
-void logTrace(String msg) {
-        if (logLevelInfo.level>=5) log.trace "${logMessage(msg)}"
 }
