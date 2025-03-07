@@ -30,7 +30,7 @@
         {
             "name": "BWA Spa Manager - Cloud Control",
             "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/Cloud-Control/master/packageManifest.json",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/refs/heads/master/Cloud-Control/packageManifest.json",
             "description": "Integrates your internet connected Hot Tub/Spa system with Balboa Cloud Spa Controller into the Hubitat environment.  Use this app/driver version if your SPA can only connect to the cloud based BWA Spa Control app.",
             "tags": [
                 "Monitoring",
@@ -43,7 +43,7 @@
         {
             "name": "BWA Spa Manager - Local TCP Direct Connection Device Driver",
             "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/Local-Control/master/packageManifest.json",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/refs/heads/master/Local-Control/packageManifest.json",
             "description": "Integrates your locally connected (Hubitat Hub and SPA must be on the same home network) connected Hot Tub/Spa system (Balboa WiFi controller) into the Hubitat environment.  Use this Hubitat device driver only version to directly TCP connect to the SPA WiFi controller.",
             "tags": [
                 "Monitoring",
