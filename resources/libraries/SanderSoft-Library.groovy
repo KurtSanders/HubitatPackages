@@ -10,7 +10,7 @@ library (
     name: "SanderSoft-Library",
     namespace: "kurtsanders",
     documentationLink: "https://github.com/KurtSanders/",
-    version: "0.0.5",
+    version: "0.0.6",
     disclaimer: "This core library is only for use with SanderSoft Apps and Drivers."
 )
 
@@ -182,7 +182,7 @@ void checkLogLevel(Map levelInfo = [level:null, time:null]) {
         runIn(60*levelInfo.time, logsOff, [overwrite: true])
     }
     if (levelInfo.time == 0) logMsg += " (${LOG_TIMES[levelInfo.time]})"
-    logInfo(logMsg)
+    logInfo "${logMsg}"
 }
 
 void syncLogLevel(level, time) {
