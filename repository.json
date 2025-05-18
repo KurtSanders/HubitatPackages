@@ -69,7 +69,7 @@
         {
             "name": "Idioms",
             "category": "Utility",
-            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Fun/refs/heads/main/idioms/packageManifest.json",
+            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Api-Fun/refs/heads/main/idioms/packageManifest.json",
             "description": "Provides an Idiom phrase and it's definition (over 20K+) in a virtual device driver for voice TTS output each time refreshed or switched on",
             "tags": [
                 "Misc. Devices",
