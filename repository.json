@@ -65,6 +65,19 @@
                 "Temperature & Humidity"
             ],
             "id": "ea1bd527-214b-4a03-ac9e-8ef3c6e6fb34"
+        },
+        {
+            "name": "Fun Api Responses",
+            "category": "Convenience",
+            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Fun-Api-Responses/refs/heads/main/packageManifest.json",
+            "description": "Generates fun & educational random responses on several selectable categories (e.g. Idioms, Jokes, Trivia, Poems, Quotes & Riddles) that are suitable for TTS output.",
+            "tags": [
+                "Misc. Devices",
+                "Notifications",
+                "Voice Assistants",
+                "Tools & Utilities"
+            ],
+            "id": "fc591262-b4f6-43ad-9f22-6f3ac349227d"
         }
     ]
 }
