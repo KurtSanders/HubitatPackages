@@ -67,6 +67,20 @@
             "id": "ea1bd527-214b-4a03-ac9e-8ef3c6e6fb34"
         },
         {
+            "name": "Weight Guru Bathroom Scale Integration",
+            "category": "Integrations",
+            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Dywarmic-Integration/refs/heads/main/packageManifest.json",
+            "description": "Provides a device driver to access to your Weight Guru bathroom scale biometric data.",
+            "tags": [
+                "Monitoring",
+                "Scales",
+                "Health & Fitness",
+                "Multi Sensors",
+                "Bathroom"
+            ],
+            "id": "36ae3325-5561-426e-a706-384c151f8a7d"
+        },
+        {
             "name": "Fun Api Responses",
             "category": "Convenience",
             "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Fun-Api-Responses/refs/heads/main/packageManifest.json",
