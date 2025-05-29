@@ -10,7 +10,7 @@ library (
     name: "SanderSoft-Library",
     namespace: "kurtsanders",
     documentationLink: "https://github.com/KurtSanders/",
-    version: "0.0.6",
+    version: "0.0.7",
     disclaimer: "This core library is only for use with SanderSoft Apps and Drivers."
 )
 
@@ -60,6 +60,17 @@ def displayPaypal() {
         paragraph("<a href='https://www.paypal.com/donate/?hosted_button_id=E4WXT86RTPXDC'>Please consider making a small donation to support the developers application via PayPal™.</a><br>" +
                   "<small><i>Copyright \u00a9 2012-${currentYear} SandersSoft™ - All rights reserved.</i></small><br>")
     }
+}
+
+public makeWebLink (link, label, hoverTitle="Click Me") {
+    // Check if a local path on the hub
+    if (link.startsWith('/')) {
+        link = "http://${location.hub.localIP}${link}"
+    }
+    hoverTitle="title='${hoverTitle}'"
+    def boxGraphic = "<a href=${link} target='_blank' ${hoverTitle} > ${BOX_ARROW} </a>"
+    def line  = "<span><a target='_blank' ${hoverTitle} rel='noopener noreferrer' href=${link}><strong>${label}</strong></a>${boxGraphic}</span>"
+    return line
 }
 
 public String convertToCurrentTimeZone(String dateStr) {
