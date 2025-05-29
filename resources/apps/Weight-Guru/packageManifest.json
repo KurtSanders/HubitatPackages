@@ -1,0 +1,38 @@
+{
+    "packageName": "Weight Guru Bathroom Scale Integration",
+    "author": "Kurt Sanders",
+    "minimumHEVersion": "0.0.1",
+    "dateReleased": "2025-05-29",
+    "documentationLink": "https://github.com/KurtSanders/HubitatPackages/tree/master/resources/apps/Weight-Guru",
+    "communityLink": "https://community.hubitat.com/",
+    "licenseFile": "",
+    "releaseNotes": "Provides a custom device driver to access to your Weight Guru bathroom scale daily biometric data.  You must manually create a virtual device and specify this custom device driver.  You need to have an account on https://weightgurus.com/",
+    "bundles": [
+        {
+            "id": "98f44fba-b8c7-4ea8-b033-9564640d42fe",
+            "name": "Weight Guru Bundle",
+            "namespace": "kurtsanders",
+            "version": "0.0.1",
+            "location": "https://github.com/KurtSanders/HubitatPackages/raw/refs/heads/master/resources/apps/Weight-Guru/WeightGuruBundle.zip",
+            "required": true
+        },
+        {
+            "id": "b438d8c9-c3bb-45b6-9dcd-a5f0fb931617",
+            "name": "SanderSoft Bundle",
+            "namespace": "kurtsanders",
+            "version": "0.0.7",
+            "location": "https://github.com/KurtSanders/HubitatPackages/raw/master/resources/bundles/SanderSoftBundle.zip",
+            "required": true
+        }
+    ],
+    "drivers": [
+        {
+            "id": "0d644444-4cc1-45ac-9aaa-c83baf2cd0bd",
+            "name": "Weight Guru API Driver",
+            "version": "0.0.1",
+            "namespace": "kurtsanders",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Weight-Guru/Weight-Guru-Device.groovy",
+            "required": true
+        }
+    ]
+}
