@@ -28,7 +28,7 @@
     "drivers": [
         {
             "id": "0d644444-4cc1-45ac-9aaa-c83baf2cd0bd",
-            "name": "Weight Guru API Driver",
+            "name": "Weight-Guru-API-Device",
             "version": "0.0.1",
             "namespace": "kurtsanders",
             "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Weight-Guru/Weight-Guru-Device.groovy",
