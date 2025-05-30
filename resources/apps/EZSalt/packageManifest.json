@@ -31,7 +31,7 @@
             "name": "EZsalt Driver",
             "version": "0.0.1",
             "namespace": "kurtsanders",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/EZSalt/ezsalt.groovy",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/EZSalt/EZsalt%20Driver.groovy",
             "required": true
         }
     ]
