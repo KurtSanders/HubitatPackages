@@ -18,7 +18,7 @@
 
 import groovy.transform.Field
 
-@Field static final String PARENT_DEVICE_NAME 	= "Weight Guru API Driver"
+@Field static final String PARENT_DEVICE_NAME 	= "Weight Guru Driver"
 @Field static final String VERSION 				= "0.0.1"
 @Field static final String BASE_LOGIN_URL   	= "https://api.weightgurus.com"
 @Field static final String PATH_LOGIN_URL   	= "/v3/account/login"
