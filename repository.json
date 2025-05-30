@@ -81,6 +81,17 @@
             "id": "36ae3325-5561-426e-a706-384c151f8a7d"
         },
         {
+            "name": "EZsalt Tank Monitoring & Integration",
+            "category": "Integrations",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/EZSalt/packageManifest.json",
+            "description": "Provides a custom device driver to access to your EZsalt tank data.",
+            "tags": [
+                "Monitoring",
+                "Misc. Devices"
+            ],
+            "id": "3a1f5145-0c95-476b-bf68-bfd7b26a7066"
+        },
+        {
             "name": "Fun Api Responses",
             "category": "Convenience",
             "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Fun-Api-Responses/refs/heads/main/packageManifest.json",
