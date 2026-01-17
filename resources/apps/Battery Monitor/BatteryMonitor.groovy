@@ -80,9 +80,22 @@ def pageStatus() {
                 }
             }
         }
-        section() {
+        section(sectionHeader("Setup")) {
             href "pageStatus", title:"Refresh", description:""
             href "pageConfigure", title:"Configure", description:""
+            displayPaypal()
+        }
+        section(sectionHeader("Logging Options")) {
+            if (logLevel == null && logLevelTime == null) {
+                logInfo "${app.name}: Setting Innital logLevel and LogLevelTime defaults"
+                app.updateSetting(logLevel, [type: "enum", value: [5]])
+                app.updateSetting(logLevelTime, [type: "enum", value: [30]])
+            }
+            //Logging Options
+            input name: "logLevel", type: "enum", title: fmtTitle("Logging Level"), submitOnChange: true,
+                description: fmtDesc("Logs selected level and above"), defaultValue: 3, options: LOG_LEVELS
+            input name: "logLevelTime", type: "enum", title: fmtTitle("Logging Level Time"), submitOnChange: true,
+                description: fmtDesc("Time to enable Debug/Trace logging"),defaultValue: 10, options: LOG_TIMES
         }
     }
 }
@@ -149,7 +162,7 @@ def pageConfigure() {
 }
 
 def installed() {
-    log.Info "Initialized with settings: ${settings}"
+    logInfo "Initialized with settings: ${settings}"
     initialize()
 }
 
@@ -165,6 +178,15 @@ def updated() {
 
 def initialize() {
     schedule(settings.time, updateStatus)
+    subscribe(devices,'battery','batteryWatcher')
+    checkLogLevel()
+}
+
+def batteryWatcher(evt) {
+    logDebug "batteryWatcher() called: ${evt.device.displayName}: ${evt.name} ${evt.value}"
+    if (evt.value.toInteger() < settings.level1) {
+        send("Warning: ${evt.device.displayName} battery is ${evt.value}% is below your low threshold of ${settings.level1}%.")
+    }
 }
 
 def updateStatus() {
@@ -182,8 +204,8 @@ def updateStatus() {
     	            break
         	}
         } catch (e) {
-            log.error "Caught error checking battery status."
-            log.error e
+            logErr "Caught error checking battery status."
+            logErr e
             send("${it.displayName} battery reported a non-integer level.")
         }
     }
@@ -213,8 +235,8 @@ def makeDeviceList() {
             }
         } catch (e) {
             group = '0'
-            log.error "Caught error checking battery status for '${it.displayName}'."
-            log.trace e
+            logErr "Caught error checking battery status for '${it.displayName}'."
+            logErr e
         }
         // Create deviceList of devices with group numbers
         def map = [:] // Create an empty map
@@ -230,7 +252,7 @@ def makeDeviceList() {
 
 Boolean isModeOK() {
    Boolean isOK = !settings["modes"] || settings["modes"].contains(location.mode)
-   log.info "Checking if mode is OK; reutrning: ${isOK}"
+   logDebug "Checking if mode is OK; reutrning: ${isOK}"
    return isOK
 }
 
@@ -238,5 +260,32 @@ def send(msg) {
     if (settings.pushMessage && isModeOK()) {     
         sendPushMessage.deviceNotification(msg)
     } 
+}
+
+//Logging Functions
+def logMessage(String msg) {
+    if (app) {
+        return "<span style='color: blue'>${app.name}</span>: ${msg}"   
+    } else {
+        return "<span style='color: green'>${device.name}</span>: ${msg}"           
+    }
+}
+
+void logErr(String msg) {
+    if (logLevelInfo.level>=1) log.error "${logMessage(msg)}"
+}
+void logWarn(String msg) {
+    if (logLevelInfo.level>=2) log.warn "${logMessage(msg)}"
+}
+void logInfo(String msg) {
+    if (logLevelInfo.level>=3) log.info "${logMessage(msg)}"
+}
+
+void logDebug(String msg) {
+        if (logLevelInfo.level>=4) log.debug "${logMessage(msg)}"
+}
+
+void logTrace(String msg) {
+        if (logLevelInfo.level>=5) log.trace "${logMessage(msg)}"
 }
 
