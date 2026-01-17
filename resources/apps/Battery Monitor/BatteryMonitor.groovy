@@ -5,13 +5,13 @@ import groovy.transform.Field
 @Field static String APP_NAME                      = "Battery Monitor"
 @Field static String NAMESPACE                     = "kurtsanders"
 @Field static String AUTHOR_NAME                   = "Kurt Sanders"
-@Field static final String VERSION                 = "2.0.0"
+@Field static final String VERSION                 = "1.0.0"
 
 definition(
     name              : APP_NAME,
     namespace         : NAMESPACE,
     author            : AUTHOR_NAME,
-    description       : "Battery Level Monitor.",
+    description       : "Active Battery Level Watcher.",
     importUrl		  : "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Monitor/BatteryMonitor.groovy",
     category          : "",
     iconUrl           : "",
