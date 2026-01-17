@@ -2,7 +2,7 @@
 
 import groovy.transform.Field
 
-@Field static String APP_NAME                      = "Battery Monitor"
+@Field static String APP_NAME                      = "Battery Level Watcher"
 @Field static String NAMESPACE                     = "kurtsanders"
 @Field static String AUTHOR_NAME                   = "Kurt Sanders"
 @Field static final String VERSION                 = "1.0.0"
