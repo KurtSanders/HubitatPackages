@@ -135,6 +135,12 @@ def pageConfigure() {
         title:          "Send push notifications?",
         defaultValue:   true
     ]
+    def inputPushBattery= [
+        name:           "pushMessageBattery",
+        type:           "bool",
+        title:          "Send push notifications for all devices?",
+        defaultValue:   false
+    ]
     def pageProperties = [
         name:           "pageConfigure",
         title:           getFormat("title","${APP_NAME} Configuration"),
@@ -151,7 +157,8 @@ def pageConfigure() {
         }        
         section(getFormat('header-green',"Low Battery Notification")) {
             input inputTime
-            input inputPush   
+            input inputPush
+            input inputPushBattery
             input "sendPushMessage", "capability.notification", title: "Select Notification Devices", multiple: true, required: false
             input name: "modes", type: "mode", title: "Only send notifications if mode is", multiple: true, required: false
         }
@@ -184,6 +191,7 @@ def initialize() {
 
 def batteryWatcher(evt) {
     logDebug "batteryWatcher() called: ${evt.device.displayName}: ${evt.name} ${evt.value}"
+    if (pushMessageBattery) send("${evt.device.displayName}: ${evt.name} ${evt.value}")
     if (evt.value.toInteger() < settings.level1) {
         send("Warning: ${evt.device.displayName} battery is ${evt.value}% is below your low threshold of ${settings.level1}%.")
     }
