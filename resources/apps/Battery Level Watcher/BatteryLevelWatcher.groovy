@@ -170,6 +170,8 @@ def pageConfigure() {
 
 def installed() {
     logInfo "Initialized with settings: ${settings}"
+    app.updateSetting(level1,[value: 33, type:"number"])
+    app.updateSetting(level3,[value: 67, type:"number"])
     initialize()
 }
 
@@ -190,8 +192,8 @@ def initialize() {
 }
 
 def batteryWatcher(evt) {
-    logDebug "batteryWatcher() called: ${evt.device.displayName}: ${evt.name} ${evt.value}"
-    if (pushMessageBattery) send("${evt.device.displayName}: ${evt.name} ${evt.value}")
+    logDebug "batteryWatcher() called: ${evt.device.displayName}: ${evt.name} ${evt.value}%"
+    if (pushMessageBattery) send("${evt.device.displayName}: ${evt.name} is ${evt.value}%")
     if (evt.value.toInteger() < settings.level1) {
         send("Warning: ${evt.device.displayName} battery is ${evt.value}% is below your low threshold of ${settings.level1}%.")
     }
