@@ -182,13 +182,13 @@ def updateStatus() {
                 	send("${it.displayName} battery is ${it.currentBattery}% which is lesss than threshold level: ${settings.level1}%.)")
                 	break
                 default:
-	                send("${it.displayName} battery is not reporting an integer battery level.")
+                    send("${it.displayName} battery '${it.currentBattery}'is not reporting an integer battery level.")
     	            break
         	}
         } catch (e) {
             logErr "Caught error checking battery status."
             logErr e
-            send("${it.displayName} battery reported a non-integer level.")
+            send("Error: ${it.displayName} battery '${it.currentBattery}' reported a non-integer level.")
         }
     }
 }
