@@ -36,9 +36,65 @@ def pageStatus() {
         uninstall:  true
     ]    
     def deviceList = makeDeviceList()
+    def js = """
+		var t = document.getElementById('sales-info');
+		if(t) {
+			Array.from(t.rows).forEach((tr, rowIdx) => {
+				Array.from(tr.cells).forEach((cell, cellIdx) => {
+					if (cell.innerText == '') {
+						cell.style.backgroundColor = 'lightblue';
+					}else if (cell.innerText >=0 && cell.innerText <= $settings.level1) {
+						cell.style.backgroundColor = 'yellow';
+					}else if (cell.innerText > $settings.level1 && cell.innerText <= $settings.level3) {
+						cell.style.backgroundColor = 'LawnGreen';
+					}else if (cell.innerText > $settings.level3 && cell.innerText < 100) {
+						cell.style.backgroundColor = 'lightgreen';
+					}else if (cell.innerText >= 100) {
+						cell.style.backgroundColor = 'green';
+					}
+				});
+			});
+		}
+		
+		/*var table = document.getElementById("sales-info");
+		for (var i = 0, row; row = table.rows[i]; i++) {
+			for (var j = 0, cell; cell = row.cells[j]; j++) {
+				if (cell.innerText == '') {
+					cell.style.backgroundColor = 'lightblue';
+				}else if (cell.innerText >=0 && cell.innerText <=$settings.level1) {
+					cell.style.backgroundColor = 'yellow';
+				}else if (cell.innerText > $settings.level1 && cell.innerText <=$settings.level3) {
+					cell.style.backgroundColor = 'LawnGreen';
+				}else if (cell.innerText > $settings.level3 && cell.innerText <=100) {
+					cell.style.backgroundColor = 'lightgreen';
+				}else if (cell.innerText >= 100) {
+					cell.style.backgroundColor = 'green';
+				}
+			}  
+		}*/
+	"""
+    def htmlStyle 	= 
+        	'<html><head><style>' + 
+            'table th, td {text-align: center;padding: 8px;}' +
+            'tr:nth-child(even) td:nth-child(n+2),tr:nth-child(even) th:nth-child(n+2) {background-color: #D6EEEE; /* Light gray for odd rows */}' +        
+//            'tr:nth-child(even) {background-color: #D6EEEE;}' +
+//            'table td:nth-child(1){background-color:white;}' +
+            'table {border-collapse: collapse;width: 100%;}' +
+            '</style></head>'
+    def htmlHead 	= 
+        	"<table id='sales-info'><thead>" + 
+            '<tr><th>Battery Level</th>' +
+            '<th>Device Name</th>' +
+            '<th>Device Type</th>' +
+            '<th>Last Battery Report Duration</th>' +
+            '<th>Last Activity</th>' +
+            '</thead></tr><tbody>'
+	def htmlFoot 	= "</table><script>${js}</script></tbody></html>"
+    def lineout = ''
+
     return dynamicPage(pageProperties) {
+        // Iterate four loops
         for (int i = 0; i < 5; i++) {
-	        def lineout = ''
             def tempList = deviceList.findAll { it.group == i }
             if (tempList) {
                 def sectionTitile
@@ -58,35 +114,22 @@ def pageStatus() {
                     case 4:
                     	sectionTitle = getFormat('header-green',"Batteries with Full Charge")
                     break
-                }                    
-                section() {
-                    logDebug "tempList => ${tempList}"
-                    tempList.sort { it.battery }.each { userMap ->
-                        lineout += '<tr>' + 
-                            "<td>${userMap.battery}%</td>" +
-                            "<td><a href=http://${location.hub.localIP}/device/edit/${userMap.id}>${userMap?.name}</a></td>" +
-                            "<td>${userMap.type}</td>" +
-                            "<td>${userMap.lastBatteryReportDuration}</td>" +
-                            "<td>${userMap?.lastActivity}</td>" +
-                            '</tr>'
-                    }
-                def htmlStyle 	= '<html><head><style>' + 
-								  'table th, td {text-align: center;padding: 8px;}' +
-								  'tr:nth-child(even) {background-color: #D6EEEE;}' +                    
-                    			  'table {border-collapse: collapse;width: 100%;}' +
-                    			  '</style></head>'
-                def htmlHead 	= "<table><caption>${sectionTitle}</caption><thead>" + 
-                    '<tr><th>Battery Level</th>' +
-                    '<th>Device Name</th>' +
-                    '<th>Device Type</th>' +
-                    '<th>Last Battery Report Duration</th>' +
-                    '<th>Last Activity</th>' +
-                    '</thead></tr><tbody>'
-                def htmlFoot 	= '</table></tbody></html>'
-                    paragraph "${htmlStyle}${htmlHead}${lineout}${htmlFoot}"
+                }
+                lineout += "<th colspan='5'>${sectionTitle}</th>"
+                tempList.sort { it.battery }.each { userMap ->
+                    lineout += '<tr>' + 
+                        "<td>${userMap.battery}</td>" +
+                        "<td><a href=http://${location.hub.localIP}/device/edit/${userMap.id}>${userMap?.name}</a></td>" +
+                        "<td>${userMap.type}</td>" +
+                        "<td>${userMap.lastBatteryReportDuration}</td>" +
+                        "<td>${userMap?.lastActivity}</td>" +
+                        '</tr>'
                 }
             }
         }
+        section() {
+                paragraph "${htmlStyle}${htmlHead}${lineout}${htmlFoot}"            
+        }        
         section(sectionHeader("Application Setup")) {
             href "pageStatus", title:"Refresh", description:""
             href "pageConfigure", title:"Application Configure", description:""
