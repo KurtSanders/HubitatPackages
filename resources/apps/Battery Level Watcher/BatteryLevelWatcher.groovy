@@ -46,7 +46,7 @@ def pageStatus() {
 					}else if (cell.innerText >=0 && cell.innerText <= $settings.level1) {
 						cell.style.backgroundColor = 'yellow';
 					}else if (cell.innerText > $settings.level1 && cell.innerText <= $settings.level3) {
-						cell.style.backgroundColor = 'LawnGreen';
+						cell.style.backgroundColor = '#e6ffe6';
 					}else if (cell.innerText > $settings.level3 && cell.innerText < 100) {
 						cell.style.backgroundColor = 'lightgreen';
 					}else if (cell.innerText >= 100) {
@@ -64,7 +64,7 @@ def pageStatus() {
 				}else if (cell.innerText >=0 && cell.innerText <=$settings.level1) {
 					cell.style.backgroundColor = 'yellow';
 				}else if (cell.innerText > $settings.level1 && cell.innerText <=$settings.level3) {
-					cell.style.backgroundColor = 'LawnGreen';
+					cell.style.backgroundColor = '#e6ffe6';
 				}else if (cell.innerText > $settings.level3 && cell.innerText <=100) {
 					cell.style.backgroundColor = 'lightgreen';
 				}else if (cell.innerText >= 100) {
