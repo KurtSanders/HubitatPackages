@@ -12,7 +12,7 @@ definition(
     name              : APP_NAME,
     namespace         : NAMESPACE,
     author            : AUTHOR_NAME,
-    description       : "Active Battery Level Watcher.",
+    description       : "Battery Level Watcher",
     importUrl		  : "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/BatteryLevelWatcher.groovy",
     category          : "",
     iconUrl           : "",
