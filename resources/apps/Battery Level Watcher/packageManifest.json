@@ -1,0 +1,38 @@
+{
+    "packageName": "EZsalt Monitoring",
+    "author": "Kurt Sanders",
+    "minimumHEVersion": "0.0.1",
+    "dateReleased": "2025-05-29",
+    "documentationLink": "https://github.com/KurtSanders/HubitatPackages/tree/master/resources/apps/EZSalt#readme",
+    "communityLink": "https://community.hubitat.com/",
+    "licenseFile": "",
+    "releaseNotes": "This provides a custom device driver to access your EZsalt device and the daily salt tank levels. You can choose the time of day for the device to gather the salt tank data.  You must manually create a virtual device and specify this custom device driver.",
+    "bundles": [
+        {
+            "id": "b7b2d013-a0c1-4113-b9c7-3d49801792d3",
+            "name": "EZsalt Bundle",
+            "namespace": "kurtsanders",
+            "version": "0.0.1",
+            "location": "https://github.com/KurtSanders/HubitatPackages/raw/refs/heads/master/resources/apps/EZSalt/EZsaltBundle.zip",
+            "required": true
+        },
+        {
+            "id": "b438d8c9-c3bb-45b6-9dcd-a5f0fb931617",
+            "name": "SanderSoft Bundle",
+            "namespace": "kurtsanders",
+            "version": "0.0.7",
+            "location": "https://github.com/KurtSanders/HubitatPackages/raw/master/resources/bundles/SanderSoftBundle.zip",
+            "required": true
+        }
+    ],
+    "drivers": [
+        {
+            "id": "859d141a-95a0-441e-bea9-c694b0c44f58",
+            "name": "EZsalt Driver",
+            "version": "0.0.1",
+            "namespace": "kurtsanders",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/EZSalt/EZsalt%20Driver.groovy",
+            "required": true
+        }
+    ]
+}
