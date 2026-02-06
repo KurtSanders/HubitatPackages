@@ -5,7 +5,7 @@ import groovy.transform.Field
 @Field static String APP_NAME                      = "Battery Level Watcher"
 @Field static String NAMESPACE                     = "kurtsanders"
 @Field static String AUTHOR_NAME                   = "Kurt Sanders"
-@Field static final String VERSION                 = "1.0.0"
+@Field static final String VERSION                 = "1.1.0"
 @Field static final String defaultDateTimeFormat 	= 'MMM d, yyyy, h:mm a'
 
 definition(
@@ -30,7 +30,7 @@ preferences {
 def pageStatus() {
     def pageProperties = [
         name:       "pageStatus",
-        title:      getFormat("title","${APP_NAME} Status - Version ${VERSION}"),
+        title:      getFormat("title","${APP_NAME} Status"),
         nextPage:   null,
         install:    true,
         uninstall:  true
@@ -115,7 +115,7 @@ def pageStatus() {
                     	sectionTitle = getFormat('header-green',"Batteries with Full Charge")
                     break
                 }
-                lineout += "<th colspan='5'>${sectionTitle}</th>"
+                lineout += "<th colspan='6'>${sectionTitle}</th>"
                 tempList.sort { it.battery }.each { userMap ->
                     lineout += '<tr>' + 
                         "<td>${userMap.battery}</td>" +
@@ -123,6 +123,7 @@ def pageStatus() {
                         "<td>${userMap.type}</td>" +
                         "<td>${userMap.lastBatteryReportDuration}</td>" +
                         "<td>${userMap?.lastActivity}</td>" +
+                        "<td>${buttonLink(userMap.id,'Refresh')}</td>" +
                         '</tr>'
                 }
             }
@@ -131,7 +132,7 @@ def pageStatus() {
                 paragraph "${htmlStyle}${htmlHead}${lineout}${htmlFoot}"            
         }        
         section(sectionHeader("Application Setup")) {
-            href "pageStatus", title:"Refresh", description:""
+            href "pageStatus", title:"Refresh All Devices", description:""
             href "pageConfigure", title:"Application Configure", description:""
             displayPaypal()
         }
@@ -146,10 +147,26 @@ def pageStatus() {
                 description: fmtDesc("Logs selected level and above"), defaultValue: 3, options: LOG_LEVELS
             input name: "logLevelTime", type: "enum", title: fmtTitle("Logging Level Time"), submitOnChange: true,
                 description: fmtDesc("Time to enable Debug/Trace logging"),defaultValue: 10, options: LOG_TIMES
+            paragraph "Version ${VERSION}"
         }
-        displayPaypal()
+    }
+    displayPaypal()
+}
+
+def appButtonHandler(String buttonName) {
+    logDebug "==> buttonName= ${buttonName}"
+    def dev = devices.findAll { it.id == buttonName }
+    if (dev) {
+        logDebug "==> Refreshing Config ${dev.label}"
+        dev.config
+        logDebug "==> Refreshing ${dev.label}"
+        dev.refresh
     }
 }
+
+String buttonLink(String btnName, String linkText, color = "#1A77C9", font = 15) {
+    "<div class='form-group'><input type='hidden' name='${btnName}.type' value='button'></div><div><div class='submitOnChange' onclick='buttonClick(this)' style='color:$color;cursor:pointer;font-size:${font}px'>$linkText</div></div><input type='hidden' name='settings[$btnName]' value=''>"}
+
 
 // Show Configure Page
 def pageConfigure() {
