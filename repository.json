@@ -92,6 +92,16 @@
             "id": "3a1f5145-0c95-476b-bf68-bfd7b26a7066"
         },
         {
+            "name": "Battery Level Watcher",
+            "category": "Integrations",
+            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/packageManifest.json",
+            "description": "Monitors devices with a battery capability and provides a dashboard and alert thresholds.",
+            "tags": [
+                "Monitoring"
+            ],
+            "id": "49511ba9-436d-4db4-b5ef-fa70a04b7217"
+        },
+        {
             "name": "Fun Api Responses",
             "category": "Convenience",
             "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Fun-Api-Responses/refs/heads/main/packageManifest.json",
