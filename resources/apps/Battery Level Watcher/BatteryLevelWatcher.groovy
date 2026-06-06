@@ -5,14 +5,14 @@ import groovy.transform.Field
 @Field static String APP_NAME                      = "Battery Level Watcher"
 @Field static String NAMESPACE                     = "kurtsanders"
 @Field static String AUTHOR_NAME                   = "Kurt Sanders"
-@Field static final String VERSION                 = "1.1.0"
+@Field static final String VERSION                 = "1.2.0"
 @Field static final String defaultDateTimeFormat 	= 'MMM d, yyyy, h:mm a'
 
 definition(
     name              : APP_NAME,
     namespace         : NAMESPACE,
     author            : AUTHOR_NAME,
-    description       : "Battery Level Watcher",
+    description       : "Active Battery Level Watcher.",
     importUrl		  : "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/BatteryLevelWatcher.groovy",
     category          : "",
     iconUrl           : "",
@@ -224,7 +224,8 @@ def initialize() {
 def batteryWatcher(evt) {
     logDebug "batteryWatcher() called: ${evt.device.displayName}: ${evt.name} ${evt.value}%"
     if (pushMessageBattery) send("${evt.device.displayName}: ${evt.name} is ${evt.value}%")
-    if (evt.value.toInteger() < settings.level1) {
+    int result = (evt.value ?: "0").toInteger() 
+    if (result < settings.level1) {
         send("Warning: ${evt.device.displayName} battery is ${evt.value}% is below your low threshold of ${settings.level1}%.")
     }
 }
@@ -232,7 +233,8 @@ def batteryWatcher(evt) {
 def updateStatus() {
     settings.devices.each() {
         try {
-            switch(it.currentBattery.toInteger()) {
+            int result = (it.currentBattery ?: "0").toInteger() 
+            switch(result) {
                 case {it > 100}:
 	                send("${it.displayName} battery is ${it.currentBattery}%, which is over 100.")
     	            break
@@ -259,7 +261,8 @@ def makeDeviceList() {
     int group 
     settings.devices.each() {
         try {
-            switch(it.currentBattery.toInteger()) {
+            int result = (it.currentBattery ?: "0").toInteger() 
+            switch(result) {
                 case {it <= settings.level1}:
                 group = 1
                 break
