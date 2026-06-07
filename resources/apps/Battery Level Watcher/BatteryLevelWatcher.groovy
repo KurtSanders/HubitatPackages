@@ -17,7 +17,8 @@ definition(
     category          : "",
     iconUrl           : "",
     iconX2Url         : "",
-    singleInstance    : true
+    singleInstance    : true,
+    menu			  : "Integrations"
 ) {
 }
 
