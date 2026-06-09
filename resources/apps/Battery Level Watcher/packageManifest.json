@@ -1,12 +1,12 @@
 {
     "packageName": "Battery Level Watcher",
     "author": "Kurt Sanders",
-    "minimumHEVersion": "1.1.0",
-    "dateReleased": "2026-02-06",
+    "minimumHEVersion": "1.2.0",
+    "dateReleased": "2026-06-09",
     "documentationLink": "https://github.com/KurtSanders/HubitatPackages/tree/master/resources/apps/Battery%20Level%20Watchert#readme",
     "communityLink": "https://community.hubitat.com/",
     "licenseFile": "",
-    "releaseNotes": "Monitors selected devices with a battery capability and provides a colorful dashboard and daily alert threshold messages.",
+    "releaseNotes": "Fixed a bug with displaying devices that do not have a battery value or null.\n2. Added app to Integrations Menu",
     "bundles": [
         {
             "id": "b438d8c9-c3bb-45b6-9dcd-a5f0fb931617",
@@ -21,7 +21,7 @@
         {
             "id": "896719eb-17fb-40b2-948f-165eeafed6f7",
             "name": "Battery Level Monitor",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "namespace": "kurtsanders",
             "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/BatteryLevelWatcher.groovy",
             "required": true
