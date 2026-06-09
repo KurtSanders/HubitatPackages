@@ -234,8 +234,11 @@ def batteryWatcher(evt) {
 def updateStatus() {
     settings.devices.each() {
         try {
-            int result = (it.currentBattery ?: "0").toInteger() 
+            int result = (it.currentBattery ?: 0 ).toInteger()
             switch(result) {
+                case 0:
+                    send("${it.displayName} battery '${it.currentBattery}'is not reporting an integer battery level.")
+    	            break
                 case {it > 100}:
 	                send("${it.displayName} battery is ${it.currentBattery}%, which is over 100.")
     	            break
@@ -262,8 +265,11 @@ def makeDeviceList() {
     int group 
     settings.devices.each() {
         try {
-            int result = (it.currentBattery ?: "0").toInteger() 
+            int result = (it.currentBattery ?: 0 ).toInteger() 
             switch(result) {
+                case 0:
+                group = 0
+                break
                 case {it <= settings.level1}:
                 group = 1
                 break

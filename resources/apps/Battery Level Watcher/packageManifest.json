@@ -6,7 +6,7 @@
     "documentationLink": "https://github.com/KurtSanders/HubitatPackages/tree/master/resources/apps/Battery%20Level%20Watchert#readme",
     "communityLink": "https://community.hubitat.com/",
     "licenseFile": "",
-    "releaseNotes": "Fixed a bug with displaying devices that do not have a battery value or null.\n2. Added app to Integrations Menu",
+    "releaseNotes": "1. Fixed a bug with displaying devices that do not have a battery value or null.\n2. Added app to Integrations Menu",
     "bundles": [
         {
             "id": "b438d8c9-c3bb-45b6-9dcd-a5f0fb931617",
