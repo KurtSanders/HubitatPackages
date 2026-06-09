@@ -6,6 +6,7 @@
     "documentationLink": "https://github.com/KurtSanders/HubitatPackages/tree/master/resources/apps/Battery%20Level%20Watchert#readme",
     "communityLink": "https://community.hubitat.com/",
     "licenseFile": "",
+    "payPalUrl": "https://www.paypal.com/donate/?hosted_button_id=E4WXT86RTPXDC",
     "releaseNotes": "1. Fixed a bug with displaying devices that do not have a battery value or null.\n2. Added app to Integrations Menu",
     "bundles": [
         {
@@ -24,7 +25,8 @@
             "version": "1.2.0",
             "namespace": "kurtsanders",
             "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/BatteryLevelWatcher.groovy",
-            "required": true
+            "required": true,
+			"primary": true
         }
     ]
 }
