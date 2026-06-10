@@ -1,8 +1,8 @@
 {
     "packageName": "Battery Level Watcher",
     "author": "Kurt Sanders",
-    "minimumHEVersion": "1.2.0",
-    "dateReleased": "2026-06-09",
+    "minimumHEVersion": "1.2.1",
+    "dateReleased": "2026-06-10",
     "documentationLink": "https://github.com/KurtSanders/HubitatPackages/tree/master/resources/apps/Battery%20Level%20Watchert#readme",
     "communityLink": "https://community.hubitat.com/",
     "licenseFile": "",
@@ -22,7 +22,7 @@
         {
             "id": "896719eb-17fb-40b2-948f-165eeafed6f7",
             "name": "Battery Level Monitor",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "namespace": "kurtsanders",
             "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/BatteryLevelWatcher.groovy",
             "required": true,

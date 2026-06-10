@@ -5,7 +5,7 @@ import groovy.transform.Field
 @Field static String APP_NAME                      = "Battery Level Watcher"
 @Field static String NAMESPACE                     = "kurtsanders"
 @Field static String AUTHOR_NAME                   = "Kurt Sanders"
-@Field static final String VERSION                 = "1.2.0"
+@Field static final String VERSION                 = "1.2.1"
 @Field static final String defaultDateTimeFormat 	= 'MMM d, yyyy, h:mm a'
 
 definition(
@@ -197,6 +197,7 @@ def pageConfigure() {
             label title:"Assign a name", required:false
         }
     }
+    updated()
 }
 
 def installed() {
