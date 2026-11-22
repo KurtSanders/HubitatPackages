@@ -1,132 +1,144 @@
 {
-    "author": "Kurt Sanders",
-    "gitHubUrl": "https://github.com/KurtSanders",
-    "payPalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJDQJASTD8JKU&source=url",
-    "packages": [
-        {
-            "name": "Ambient Weather Station",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/STAmbientWeather/master/hubitat/packageManifest.json",
-            "description": "Integrates your Internet connected Ambient Weather Station system into the Hubitat environment.",
-            "tags": [
-                "Weather",
-                "Monitoring",
-                "Pools & Spas",
-                "Temperature & Humidity"
-            ],
-            "id": "e2e6903b-cfa3-463c-901f-ed9364212df2"
-        },
-        {
-            "name": "Daikin HVAC Split Manager",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Daiken-Split-Manager/refs/heads/main/packageManifest.json",
-            "description": "<b>Daiken Split Manager</b> is a native Parent App and Child Device Driver suite for Hubitat Elevation that provides 100% local monitoring and control of Wi-Fi-enabled Daikin mini-split indoor units using Daikin's local <code>/dsiot/multireq</code> JSON API (DGC protocol)—with <b>no cloud dependency</b> and <b>no Home Assistant or MQTT middleware</b> required.",
-            "tags": [
-                "Monitoring",
-				"Temperature & Humidity",
-				"Climate Control",
-				"Energy Monitoring",
-				"Integrations"
-            ],
-            "id": "6296a84e-8169-4314-89ae-a98b077841a5"
-        },
-        {
-            "name": "Hubitat on Apple Menubar",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Xbar/main/packageManifest.json",
-            "description": "Monitor and control Hubitat devices, sensors, Hubitat Safety Monitor and Modes quickly from the Apple Menu Bar.  Requires freeware Xbar 2.17-Beta, Python3 v3.11+, Apple macOS v13+",
-            "tags": [
-                "Monitoring",
-                "Tools & Utilities"
-            ],
-            "id": "c2e721d7-a207-452c-b7f6-e77634e3d59b"
-        },
-        {
-            "name": "BWA Spa Manager - Cloud Control",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/refs/heads/master/Cloud-Control/packageManifest.json",
-            "description": "Integrates your internet connected Hot Tub/Spa system with Balboa Cloud Spa Controller into the Hubitat environment.  Use this app/driver version if your SPA can only connect to the cloud based BWA Spa Control app.",
-            "tags": [
-                "Monitoring",
-                "Pools & Spas",
-                "Temperature & Humidity",
-                "Water"
-            ],
-            "id": "1c28d98d-56ab-4c54-8346-76cf62844b6e"
-        },
-        {
-            "name": "BWA Spa Manager - Local TCP Direct Connection Device Driver",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/refs/heads/master/Local-Control/packageManifest.json",
-            "description": "Integrates your locally connected (Hubitat Hub and SPA must be on the same home network) connected Hot Tub/Spa system (Balboa WiFi controller) into the Hubitat environment.  Use this Hubitat device driver only version to directly TCP connect to the SPA WiFi controller.",
-            "tags": [
-                "Monitoring",
-                "Pools & Spas",
-                "Temperature & Humidity",
-                "Water"
-            ],
-            "id": "ebb61aa6-f4d7-47f7-98df-b66bd1a319fc"
-        },
-        {
-            "name": "Dywarmic Towel Warmer Integration",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Dywarmic-Integration/refs/heads/main/packageManifest.json",
-            "description": "Provides local network WiFi integration to a Dywarmic Towel Warmer.",
-            "tags": [
-                "Monitoring",
-                "Bathroom",
-                "Pools & Spas",
-                "Temperature & Humidity"
-            ],
-            "id": "ea1bd527-214b-4a03-ac9e-8ef3c6e6fb34"
-        },
-        {
-            "name": "Weight Guru Bathroom Scale Integration",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Weight-Guru/packageManifest.json",
-            "description": "Provides a device driver to access to your Weight Guru bathroom scale biometric data.",
-            "tags": [
-                "Monitoring",
-                "Scales",
-                "Health & Fitness",
-                "Multi Sensors",
-                "Bathroom"
-            ],
-            "id": "36ae3325-5561-426e-a706-384c151f8a7d"
-        },
-        {
-            "name": "EZsalt Tank Monitoring & Integration",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/EZSalt/packageManifest.json",
-            "description": "Provides a custom device driver to access to your EZsalt tank data.",
-            "tags": [
-                "Monitoring",
-                "Misc. Devices"
-            ],
-            "id": "3a1f5145-0c95-476b-bf68-bfd7b26a7066"
-        },
-        {
-            "name": "Battery Level Watcher",
-            "category": "Integrations",
-            "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/packageManifest.json",
-            "description": "Monitors devices with a battery capability and provides a dashboard and alert thresholds.",
-            "tags": [
-                "Monitoring"
-            ],
-            "id": "49511ba9-436d-4db4-b5ef-fa70a04b7217"
-        },
-        {
-            "name": "Fun Api Responses",
-            "category": "Convenience",
-            "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Fun-Api-Responses/refs/heads/main/packageManifest.json",
-            "description": "Generates fun & educational random responses on several selectable categories (e.g. Idioms, Jokes, Trivia, Poems, Quotes & Riddles) that are suitable for TTS output.",
-            "tags": [
-                "Misc. Devices",
-                "Notifications",
-                "Voice Assistants",
-                "Tools & Utilities"
-            ],
-            "id": "fc591262-b4f6-43ad-9f22-6f3ac349227d"
-        }
-    ]
+  "author": "Kurt Sanders",
+  "gitHubUrl": "https://github.com/KurtSanders",
+  "payPalUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TJDQJASTD8JKU&source=url",
+  "packages": [
+    {
+      "name": "Ambient Weather Station",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/STAmbientWeather/master/hubitat/packageManifest.json",
+      "description": "Integrates your Internet connected Ambient Weather Station system into the Hubitat environment.",
+      "tags": [
+        "Weather",
+        "Monitoring",
+        "Pools & Spas",
+        "Temperature & Humidity"
+      ],
+      "id": "e2e6903b-cfa3-463c-901f-ed9364212df2"
+    },
+    {
+      "name": "Ecovacs GOAT A3000 Mower (Home Assistant WebSocket)",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/kurtsanders/Hubitat-Ecovacs-GOAT-Mower/main/packageManifest.json",
+      "description": "Standalone Hubitat Elevation driver for the Ecovacs GOAT A3000 robotic lawnmower via Home Assistant's local WebSocket API (subscribe_entities), featuring zero-config entity auto-discovery, real-time state push, Imperial/Metric unit conversion, extended diagnostics, and per-zone mowing.",
+      "tags": [
+        "LAN",
+		"Monitoring",
+		"Integrations",
+        "Appliances"
+      ]
+    },
+    {
+      "name": "Daikin HVAC Split Manager",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Daiken-Split-Manager/refs/heads/main/packageManifest.json",
+      "description": "<b>Daiken Split Manager</b> is a native Parent App and Child Device Driver suite for Hubitat Elevation that provides 100% local monitoring and control of Wi-Fi-enabled Daikin mini-split indoor units using Daikin's local <code>/dsiot/multireq</code> JSON API (DGC protocol)—with <b>no cloud dependency</b> and <b>no Home Assistant or MQTT middleware</b> required.",
+      "tags": [
+        "Monitoring",
+        "Temperature & Humidity",
+        "Climate Control",
+        "Energy Monitoring",
+        "Integrations"
+      ],
+      "id": "6296a84e-8169-4314-89ae-a98b077841a5"
+    },
+    {
+      "name": "Hubitat on Apple Menubar",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Xbar/main/packageManifest.json",
+      "description": "Monitor and control Hubitat devices, sensors, Hubitat Safety Monitor and Modes quickly from the Apple Menu Bar.  Requires freeware Xbar 2.17-Beta, Python3 v3.11+, Apple macOS v13+",
+      "tags": [
+        "Monitoring",
+        "Tools & Utilities"
+      ],
+      "id": "c2e721d7-a207-452c-b7f6-e77634e3d59b"
+    },
+    {
+      "name": "BWA Spa Manager - Cloud Control",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/refs/heads/master/Cloud-Control/packageManifest.json",
+      "description": "Integrates your internet connected Hot Tub/Spa system with Balboa Cloud Spa Controller into the Hubitat environment.  Use this app/driver version if your SPA can only connect to the cloud based BWA Spa Control app.",
+      "tags": [
+        "Monitoring",
+        "Pools & Spas",
+        "Temperature & Humidity",
+        "Water"
+      ],
+      "id": "1c28d98d-56ab-4c54-8346-76cf62844b6e"
+    },
+    {
+      "name": "BWA Spa Manager - Local TCP Direct Connection Device Driver",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/HBBWASpaManager/refs/heads/master/Local-Control/packageManifest.json",
+      "description": "Integrates your locally connected (Hubitat Hub and SPA must be on the same home network) connected Hot Tub/Spa system (Balboa WiFi controller) into the Hubitat environment.  Use this Hubitat device driver only version to directly TCP connect to the SPA WiFi controller.",
+      "tags": [
+        "Monitoring",
+        "Pools & Spas",
+        "Temperature & Humidity",
+        "Water"
+      ],
+      "id": "ebb61aa6-f4d7-47f7-98df-b66bd1a319fc"
+    },
+    {
+      "name": "Dywarmic Towel Warmer Integration",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Dywarmic-Integration/refs/heads/main/packageManifest.json",
+      "description": "Provides local network WiFi integration to a Dywarmic Towel Warmer.",
+      "tags": [
+        "Monitoring",
+        "Bathroom",
+        "Pools & Spas",
+        "Temperature & Humidity"
+      ],
+      "id": "ea1bd527-214b-4a03-ac9e-8ef3c6e6fb34"
+    },
+    {
+      "name": "Weight Guru Bathroom Scale Integration",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Weight-Guru/packageManifest.json",
+      "description": "Provides a device driver to access to your Weight Guru bathroom scale biometric data.",
+      "tags": [
+        "Monitoring",
+        "Scales",
+        "Health & Fitness",
+        "Multi Sensors",
+        "Bathroom"
+      ],
+      "id": "36ae3325-5561-426e-a706-384c151f8a7d"
+    },
+    {
+      "name": "EZsalt Tank Monitoring & Integration",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/EZSalt/packageManifest.json",
+      "description": "Provides a custom device driver to access to your EZsalt tank data.",
+      "tags": [
+        "Monitoring",
+        "Misc. Devices"
+      ],
+      "id": "3a1f5145-0c95-476b-bf68-bfd7b26a7066"
+    },
+    {
+      "name": "Battery Level Watcher",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/KurtSanders/HubitatPackages/refs/heads/master/resources/apps/Battery%20Level%20Watcher/packageManifest.json",
+      "description": "Monitors devices with a battery capability and provides a dashboard and alert thresholds.",
+      "tags": [
+        "Monitoring"
+      ],
+      "id": "49511ba9-436d-4db4-b5ef-fa70a04b7217"
+    },
+    {
+      "name": "Fun Api Responses",
+      "category": "Convenience",
+      "location": "https://raw.githubusercontent.com/KurtSanders/Hubitat-Fun-Api-Responses/refs/heads/main/packageManifest.json",
+      "description": "Generates fun & educational random responses on several selectable categories (e.g. Idioms, Jokes, Trivia, Poems, Quotes & Riddles) that are suitable for TTS output.",
+      "tags": [
+        "Misc. Devices",
+        "Notifications",
+        "Voice Assistants",
+        "Tools & Utilities"
+      ],
+      "id": "fc591262-b4f6-43ad-9f22-6f3ac349227d"
+    }
+  ]
 }
